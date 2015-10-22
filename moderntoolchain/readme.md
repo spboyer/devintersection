@@ -1,4 +1,4 @@
-#outline
+Content
 * node / npm
 * bower
 * gulp / grunt
@@ -78,4 +78,14 @@ Task runners for doing repeatable items.
 * integrate these tasks within CI/CD processes
 
 
+#yeoman
+[yeoman.io]()
+Scaffolding tool for building modern web applications.
 
+##Installing
+```
+$ npm install -g yo
+```
+
+# CLI
+Don't be afraid of the command line / bash etc. Everything GUI tool is being buile on top of the CLI.
