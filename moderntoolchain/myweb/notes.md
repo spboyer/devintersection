@@ -40,3 +40,12 @@ var gulp = require("gulp"),
   $ = require('gulp-load-plugins')({ lazy: true });
 
 ```
+
+Add `default` & `help` tasks
+```
+/**
+* List the available gulp tasks
+*/
+gulp.task('help', $.taskListing);
+gulp.task('default', ['help']);
+```

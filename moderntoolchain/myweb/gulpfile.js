@@ -5,7 +5,6 @@ var gulp = require("gulp"),
   project = require("./project.json"),
   $ = require('gulp-load-plugins')({ lazy: true });
 
-
 var paths = {
   webroot: "./" + project.webroot + "/"
 };
@@ -50,3 +49,9 @@ gulp.task("min:css", function() {
 });
 
 gulp.task("min", ["min:js", "min:css"]);
+
+gulp.task('lib:copy', function() {
+    return gulp.src('./bower.json')
+        .pipe($.mainBowerFiles())
+        .pipe(gulp.dest('./wwwroot/lib'));
+});
