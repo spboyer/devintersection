@@ -14,6 +14,7 @@ Open `package.json` and add the following to `devDependencies`
 * "gulp-load-plugins": "~1.0.0" - loads any gulp-* package as it is referenced
 * "del" : "~2.0.2" - using this instead of rimraf package (so remove rimraf)
 * "gulp-task-listing": "^1.0.0" - lists all of the defined tasks
+
 package.json
 ```
 {
@@ -48,4 +49,26 @@ Add `default` & `help` tasks
 */
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
+```
+
+Add the `lib:copy`, 'lib:clean` and main `lib` tasks
+```
+gulp.task('lib', ['lib:clean', 'lib:copy']);
+
+gulp.task('lib:clean', function (cb) {
+  del(paths.lib, cb);
+});
+
+gulp.task('lib:copy', function() {
+    return gulp.src('./bower.json')
+        .pipe($.mainBowerFiles())
+        .pipe(gulp.dest(paths.lib));
+});
+```
+
+Add the `postinstall` to the scripts section of the package.json file to execute after npm install
+```
+"scripts": {
+    "postinstall": "bower install && gulp lib"
+  }
 ```

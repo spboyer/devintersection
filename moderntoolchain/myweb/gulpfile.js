@@ -15,6 +15,7 @@ paths.css = paths.webroot + "css/**/*.css";
 paths.minCss = paths.webroot + "css/**/*.min.css";
 paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
+paths.lib = paths.wwwroot + 'lib';
 
 /**
 * List the available gulp tasks
@@ -50,8 +51,14 @@ gulp.task("min:css", function() {
 
 gulp.task("min", ["min:js", "min:css"]);
 
+gulp.task('lib', ['lib:clean', 'lib:copy']);
+
+gulp.task('lib:clean', function (cb) {
+  del(paths.lib, cb);
+});
+
 gulp.task('lib:copy', function() {
     return gulp.src('./bower.json')
         .pipe($.mainBowerFiles())
-        .pipe(gulp.dest('./wwwroot/lib'));
+        .pipe(gulp.dest(paths.lib));
 });
