@@ -60,3 +60,10 @@ This pattern gives you a buffer or virtual layer between the interface on top an
 implementation on the bottom. You essentially create a façade – a comprehensive view of what
 the API should be and importantly from the perspective of the app developer and end user of the apps they
 create.
+
+#Resources
+* node-soap - https://github.com/vpulim/node-soap
+* restify - http://restify.com
+* express - http://expressjs.com
+* hapi - http://hapijs.com
+
