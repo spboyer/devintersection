@@ -67,6 +67,18 @@ $ bower list
 ```
 
 # gulp / grunt
+
+Grunt and Gulp can automate tedious, human-error-prone build processes such as:
+
+* code minification
+* code-quality analysis
+* image optimization
+* unit-testing
+
+Basically, if you’re doing something over and over again, there’s a huge chance that you can automate it using either Grunt or Gulp.
+
+By integrating a task runner into our workflow, we avoid wasting time and energy on things our computer can do for us.
+
 ##Installing
 ```
 $ npm install -g gulp-cli grunt-cli
@@ -76,6 +88,16 @@ Task runners for doing repeatable items.
 * javascript linting
 * bundling
 * integrate these tasks within CI/CD processes
+
+##gulp vs grunt
+There are two main differences between Grunt and Gulp
+The way you configure your tasks.
+* Grunt is configuration-based.
+* Gulp is stream-based.
+
+ The way they run your tasks.
+* Grunt runs the processes you want to execute in a sequential manner.
+* Gulp tries to run them with maximum concurrency, meaning it will try to execute processes in parallel if possible.
 
 
 #yeoman
